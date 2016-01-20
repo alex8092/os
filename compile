@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export PATH=$HOME/cross/bin:$PATH
-mkdir -p iso
+set -e
+
 make
-genisoimage -o os.iso -V Os -b os.img iso

@@ -4,16 +4,16 @@ CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra -Werror
 
 LDFLAGS = 
 
-SRC = boot/boot.s boot/kernel.s
+SRC = boot/boot.s boot/boot2.s
 
 OBJ = $(SRC:.s=.o)
 
-NAME = os
+NAME = boot.img
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	cat $^ > iso/os.img
+	cat $^ > $(NAME)
 
 %.o: %.s
 	nasm -f bin -o $@ $<
